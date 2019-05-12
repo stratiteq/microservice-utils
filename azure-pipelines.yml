@@ -10,7 +10,10 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  name: Hosted VS2017
+  demands:
+  - msbuild
+  - visualstudio
 
 steps:
 - task: DotNetCoreCLI@2
