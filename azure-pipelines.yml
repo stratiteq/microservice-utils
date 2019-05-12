@@ -30,7 +30,8 @@ steps:
     projects: '**/*.csproj'
     arguments: '--configuration $(BuildConfiguration)'
 
-- task: NuGetCommand@2
+- task: DotNetCoreCLI@2
   inputs:
-    command: pack
+    command: 'pack'
+    configuration: '$(BuildConfiguration)'
     packagesToPack: '**/*.csproj'
