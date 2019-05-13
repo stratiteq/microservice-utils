@@ -30,10 +30,3 @@ steps:
     command: 'pack'
     configuration: '$(BuildConfiguration)'
     packagesToPack: '**/*.csproj'
-
-- task: NuGetCommand@2
-  displayName: Push
-  inputs:
-    command: push
-    nuGetFeedType: external
-    publishFeedCredentials: 'nuget.org'
