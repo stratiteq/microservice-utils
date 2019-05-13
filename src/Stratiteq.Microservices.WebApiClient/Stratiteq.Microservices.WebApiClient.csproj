@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Paul Ulvinius</Authors>
+    <Company>Stratiteq</Company>
+    <Description>Provides a base class that helps creating and configuring typed HTTP Client classes that handles all authenticated machine-to-machine communication to a specific Web API.</Description>
+    <PackageProjectUrl>https://github.com/stratiteq/microservice-utils</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/stratiteq/microservice-utils</RepositoryUrl>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>..\..\Stratiteq.Microservices.ruleset</CodeAnalysisRuleSet>
+    <Features>IOperation</Features>
+    <DocumentationFile>bin/Stratiteq.Microservices.WebApiClient.xml</DocumentationFile>
+    <NoWarn />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\stylecop.json" Link="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Identity.Client" Version="3.0.8" />
+    <PackageReference Include="Stratiteq.Microservices.X509Certificate" Version="1.0.0" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

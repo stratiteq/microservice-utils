@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stratiteq.Microservices.X50
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stratiteq.Microservices.ClientCertAuth", "src\Stratiteq.Microservices.ClientCertAuth\Stratiteq.Microservices.ClientCertAuth.csproj", "{7CEB4C44-2C03-4B30-8827-F62DDAD9C2A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stratiteq.Microservices.WebApiClient", "src\Stratiteq.Microservices.WebApiClient\Stratiteq.Microservices.WebApiClient.csproj", "{994B816B-1FD1-456A-B082-F3E5F1C3B8B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7CEB4C44-2C03-4B30-8827-F62DDAD9C2A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CEB4C44-2C03-4B30-8827-F62DDAD9C2A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CEB4C44-2C03-4B30-8827-F62DDAD9C2A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{994B816B-1FD1-456A-B082-F3E5F1C3B8B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{994B816B-1FD1-456A-B082-F3E5F1C3B8B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{994B816B-1FD1-456A-B082-F3E5F1C3B8B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{994B816B-1FD1-456A-B082-F3E5F1C3B8B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
