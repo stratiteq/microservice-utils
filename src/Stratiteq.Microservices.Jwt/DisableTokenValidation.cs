@@ -4,13 +4,13 @@ using Microsoft.IdentityModel.Tokens;
 namespace Stratiteq.Microservices.Jwt
 {
     /// <summary>
-    /// Helps to disable token validation when calling ValidateToken on the JwtSecurityTokenHandler. 
+    /// Helps to disable token validation when calling ValidateToken on the JwtSecurityTokenHandler.
     /// This can be helpful when only wanting to extract claims from a jwt, since this functionality is included in ValidateToken-method.
     /// </summary>
     public static class DisableTokenValidation
     {
         /// <summary>
-        /// TokenValidationParameters instance where all validation settings are turned off. SignatureValidator will just return a jwt regardlessly.
+        /// Gets a TokenValidationParameters instance where all validation settings are turned off. SignatureValidator will just return a jwt regardlessly.
         /// </summary>
         public static TokenValidationParameters TokenValidationParameters { get; } = new TokenValidationParameters
         {

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stratiteq.Microservices.Jwt", "src\Stratiteq.Microservices.Jwt\Stratiteq.Microservices.Jwt.csproj", "{163C4071-2B85-4662-B5F1-68C650A54AC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stratiteq.Microservices.Jwt", "src\Stratiteq.Microservices.Jwt\Stratiteq.Microservices.Jwt.csproj", "{163C4071-2B85-4662-B5F1-68C650A54AC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stratiteq.Microservices.X509Certificate", "src\Stratiteq.Microservices.X509Certificate\Stratiteq.Microservices.X509Certificate.csproj", "{854924FC-A563-44C9-9C02-4283A4E9B856}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{163C4071-2B85-4662-B5F1-68C650A54AC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{163C4071-2B85-4662-B5F1-68C650A54AC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{163C4071-2B85-4662-B5F1-68C650A54AC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{854924FC-A563-44C9-9C02-4283A4E9B856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{854924FC-A563-44C9-9C02-4283A4E9B856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{854924FC-A563-44C9-9C02-4283A4E9B856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{854924FC-A563-44C9-9C02-4283A4E9B856}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
