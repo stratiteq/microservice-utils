@@ -49,7 +49,7 @@ stages:
       - msbuild
       - visualstudio
     # creates an environment if it doesn’t exist
-    environment: 'ClientCertAuth-nuget.org'
+    environment: 'nuget-org-ClientCertAuth'
     strategy:
       # default deployment strategy
       runOnce:
