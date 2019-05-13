@@ -9,56 +9,30 @@ variables:
 trigger:
 - master
 
-stages:
-- stage: Build
-  jobs:
-  - job: BuildJob
-    pool:
-      name: Hosted VS2017
-      demands:
-      - msbuild
-      - visualstudio
-    steps:
-    - task: DotNetCoreCLI@2
-      displayName: Restore
-      inputs:
-        command: 'restore'
-        projects: '**/*.csproj'
-        feedsToUse: 'select'
-        versioningScheme: 'off'
+pool:
+  name: Hosted VS2017
+  demands:
+  - msbuild
+  - visualstudio
 
-    - task: DotNetCoreCLI@2
-      displayName: Pack
-      inputs:
-        command: 'pack'
-        configuration: '$(BuildConfiguration)'
-        packagesToPack: '**/*.csproj'
+steps:
+- task: DotNetCoreCLI@2
+  displayName: Restore
+  inputs:
+    command: 'restore'
+    projects: '**/*.csproj'
+    feedsToUse: 'select'
+    versioningScheme: 'off'
 
-    - task: PublishBuildArtifacts@1
-      displayName: 'Publish Artifact'
-      inputs:
-        PathtoPublish: '$(build.artifactstagingdirectory)'
-      condition: succeededOrFailed()
-- stage: Publish
-  jobs:
-    # track deployments on the environment
-  - deployment: Publish
-    pool:
-      name: Hosted VS2017
-      demands:
-      - msbuild
-      - visualstudio
-    # creates an environment if it doesn’t exist
-    environment: 'nuget-org-ClientCertAuth'
-    strategy:
-      # default deployment strategy
-      runOnce:
-        deploy:
-          steps:
-          - task: NuGetCommand@2
-            displayName: 'NuGet push'
-            inputs:
-              command: push
-              packagesToPush: '$(Build.ArtifactStagingDirectory)/**/$(PackageName).*.nupkg;!$(Build.ArtifactStagingDirectory)/**/$(PackageName).*.symbols.nupkg'
-              nuGetFeedType: external
-              publishFeedCredentials: nuget.org
+- task: DotNetCoreCLI@2
+  displayName: Pack
+  inputs:
+    command: 'pack'
+    configuration: '$(BuildConfiguration)'
+    packagesToPack: '**/*.csproj'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()
