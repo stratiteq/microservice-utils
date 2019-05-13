@@ -30,3 +30,9 @@ steps:
     command: 'pack'
     configuration: '$(BuildConfiguration)'
     packagesToPack: '**/*.csproj'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+  condition: succeededOrFailed()
