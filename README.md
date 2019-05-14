@@ -1,5 +1,5 @@
 # stratiteq-microservice-utils
-A collection of Nuget packages that simplifies building micro services on the .NET platform
+A collection of Nuget packages that simplifies building microservices on the .NET platform
 
 ## Stratiteq.Microservices.ClientCertAuth
 Validates incoming client certificate, the .NET Core way.
