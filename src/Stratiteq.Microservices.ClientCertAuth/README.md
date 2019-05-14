@@ -2,7 +2,7 @@
 Validates incoming client certificate, the .NET Core way.
 
 Completely based on work by Barry Dorrans (https://idunno.org/) from https://github.com/blowdart/idunno.Authentication/tree/master/src/idunno.Authentication.Certificate.
-Some minor code comment fixes, and extracted the certificate bits only, as well as refactored out the X509Certificate helpers to separate nuget. Also added a default certificate validation service based on thumbprint matching.
+Fixed some code comments, and extracted the certificate bits only, as well as refactored out the X509Certificate helpers to separate nuget. Also added a default certificate validation service based on thumbprint matching.
 
 Example Startup.cs code:
 
@@ -66,15 +66,15 @@ namespace My.WebApplication
                                 return Task.CompletedTask;
                             }
 
-							// Create a ClaimsIdentiy based on the claims in the certificate. This code uses the CreateClaimsFromCertificate() helper method in the Stratiteq.Microservices.X509Certificate nuget. 
-							// It also uses the GetJwtFromAuthorizationHeader() helper method from the Stratiteq.Microservices.Jwt nuget.
+                            // Create a ClaimsIdentiy based on the claims in the certificate. This code uses the CreateClaimsFromCertificate() helper method in the Stratiteq.Microservices.X509Certificate nuget. 
+                            // It also uses the GetJwtFromAuthorizationHeader() helper method from the Stratiteq.Microservices.Jwt nuget.
                             var token = context.Request.Headers.GetJwtFromAuthorizationHeader();
                             var certClaimsIdentity = new ClaimsIdentity(
                                 context.ClientCertificate.CreateClaimsFromCertificate(context.Options.ClaimsIssuer),
                                 CertificateAuthenticationDefaults.AuthenticationScheme);
 
                             // Optionally, if also doing authorization based on incoming jwt token, populate claims from jwt to the claims list in the .NET ClaimsPrincipal to hook up the Authorize-attribute and User.IsInRole etc. 
-							// These helpers are in the Stratiteq.Microservices.Jwt nuget. Alternatively, just assign certClaimsIdentity to context.Principal directly.
+                            // These helpers are in the Stratiteq.Microservices.Jwt nuget. Alternatively, just assign certClaimsIdentity to context.Principal directly.
                             context.Principal = string.IsNullOrEmpty(token) ?
                                 new ClaimsPrincipal(certClaimsIdentity) :
                                 new ClaimsPrincipal(new[]
@@ -89,7 +89,7 @@ namespace My.WebApplication
                     };
                 });
 
-			// Strongly consider enforcing authorization globally for all endpoints in the API by using the following configuration:
+            // Strongly consider enforcing authorization globally for all endpoints in the API by using the following configuration:
             services
                 .AddMvc(o =>
                 {
