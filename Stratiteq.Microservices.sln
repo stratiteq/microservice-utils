@@ -5,11 +5,16 @@ VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stratiteq.Microservices.Jwt", "src\Stratiteq.Microservices.Jwt\Stratiteq.Microservices.Jwt.csproj", "{163C4071-2B85-4662-B5F1-68C650A54AC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stratiteq.Microservices.X509Certificate", "src\Stratiteq.Microservices.X509Certificate\Stratiteq.Microservices.X509Certificate.csproj", "{854924FC-A563-44C9-9C02-4283A4E9B856}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stratiteq.Microservices.X509Certificate", "src\Stratiteq.Microservices.X509Certificate\Stratiteq.Microservices.X509Certificate.csproj", "{854924FC-A563-44C9-9C02-4283A4E9B856}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stratiteq.Microservices.ClientCertAuth", "src\Stratiteq.Microservices.ClientCertAuth\Stratiteq.Microservices.ClientCertAuth.csproj", "{7CEB4C44-2C03-4B30-8827-F62DDAD9C2A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stratiteq.Microservices.ClientCertAuth", "src\Stratiteq.Microservices.ClientCertAuth\Stratiteq.Microservices.ClientCertAuth.csproj", "{7CEB4C44-2C03-4B30-8827-F62DDAD9C2A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stratiteq.Microservices.WebApiClient", "src\Stratiteq.Microservices.WebApiClient\Stratiteq.Microservices.WebApiClient.csproj", "{994B816B-1FD1-456A-B082-F3E5F1C3B8B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stratiteq.Microservices.WebApiClient", "src\Stratiteq.Microservices.WebApiClient\Stratiteq.Microservices.WebApiClient.csproj", "{994B816B-1FD1-456A-B082-F3E5F1C3B8B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RepoRoot", "RepoRoot", "{D24CDF4F-8531-4D9B-A435-C674B7C8C729}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
