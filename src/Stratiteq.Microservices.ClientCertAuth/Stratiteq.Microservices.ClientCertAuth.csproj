@@ -7,18 +7,16 @@
     <Description>Adds client certificate validation capabilities to ASP.NET Core.</Description>
     <PackageProjectUrl>https://github.com/stratiteq/microservice-utils</PackageProjectUrl>
     <RepositoryUrl>https://github.com/stratiteq/microservice-utils</RepositoryUrl>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
-    <Version>1.0.0</Version>
-  </PropertyGroup>
-
-  <PropertyGroup>
+    <PackageIconUrl>https://www.stratiteq.com/wp-content/uploads/sq-logo-black-64x64.png</PackageIconUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <CodeAnalysisRuleSet>..\..\Stratiteq.Microservices.ruleset</CodeAnalysisRuleSet>
     <Features>IOperation</Features>
-    <DocumentationFile>bin/Stratiteq.Microservices.ClientCertAuth.xml</DocumentationFile>
     <NoWarn />
-    <Authors>Paul Ulvinius</Authors>
+    <DocumentationFile>bin/Stratiteq.Microservices.ClientCertAuth.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
