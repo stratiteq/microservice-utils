@@ -7,17 +7,16 @@
     <Description>Provides a base class that helps creating and configuring typed HTTP Client classes that handles all authenticated machine-to-machine communication to a specific Web API.</Description>
     <PackageProjectUrl>https://github.com/stratiteq/microservice-utils</PackageProjectUrl>
     <RepositoryUrl>https://github.com/stratiteq/microservice-utils</RepositoryUrl>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
-    <Version>1.0.0</Version>
-  </PropertyGroup>
-
-  <PropertyGroup>
+    <PackageIconUrl>https://www.stratiteq.com/wp-content/uploads/sq-logo-black-64x64.png</PackageIconUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <CodeAnalysisRuleSet>..\..\Stratiteq.Microservices.ruleset</CodeAnalysisRuleSet>
     <Features>IOperation</Features>
-    <DocumentationFile>bin/Stratiteq.Microservices.WebApiClient.xml</DocumentationFile>
     <NoWarn />
+    <DocumentationFile>bin/Stratiteq.Microservices.WebApiClient.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
