@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
+using Microsoft.Identity.Client;
+using Stratiteq.Microservices.X509Certificate;
 
 namespace Stratiteq.Microservices.WebApiClient
 {
@@ -32,5 +35,19 @@ namespace Stratiteq.Microservices.WebApiClient
         /// For the type parameter, use your typed HTTP client classes that inherit from WebApiClientBase.
         /// </summary>
         public Dictionary<Type, string> AADAppIdentifiers { get; set; } = new Dictionary<Type, string>();
+
+        public IConfidentialClientApplication CreateConfidentialClientApplication(X509Certificate2 x509Certificate) =>
+            ConfidentialClientApplicationBuilder
+                .Create(ClientId)
+                .WithCertificate(x509Certificate)
+                .WithAuthority(AzureCloudInstance.AzurePublic, TenantId)
+                .Build();
+
+        public IConfidentialClientApplication CreateConfidentialClientApplication(string certificateSubjectName) =>
+            ConfidentialClientApplicationBuilder
+                .Create(ClientId)
+                .WithCertificate(CertificateFinder.FindBySubjectName(certificateSubjectName, DateTime.UtcNow))
+                .WithAuthority(AzureCloudInstance.AzurePublic, TenantId)
+                .Build();
     }
 }
