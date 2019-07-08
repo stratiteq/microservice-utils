@@ -9,9 +9,9 @@
     <RepositoryUrl>https://github.com/stratiteq/microservice-utils</RepositoryUrl>
     <PackageIconUrl>https://www.stratiteq.com/wp-content/uploads/sq-logo-black-64x64.png</PackageIconUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>1.0.2</Version>
-    <AssemblyVersion>1.0.2.0</AssemblyVersion>
-    <FileVersion>1.0.2.0</FileVersion>
+    <Version>1.0.3</Version>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
+    <FileVersion>1.0.3.0</FileVersion>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <CodeAnalysisRuleSet>..\..\Stratiteq.Microservices.ruleset</CodeAnalysisRuleSet>
     <Features>IOperation</Features>
@@ -24,8 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Identity.Client" Version="3.0.8" />
-    <PackageReference Include="Stratiteq.Microservices.X509Certificate" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.1.0" />
+    <PackageReference Include="Stratiteq.Microservices.X509Certificate" Version="1.0.1" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

@@ -3,7 +3,6 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Microsoft.Identity.Client;
-using Stratiteq.Microservices.X509Certificate;
 
 namespace Stratiteq.Microservices.WebApiClient
 {
@@ -17,23 +16,11 @@ namespace Stratiteq.Microservices.WebApiClient
     {
         public const string DefaultScope = "/.default";
 
-        public WebApiClientBase(HttpClient httpClient, AzureADConfiguration azureADConfiguration)
+        public WebApiClientBase(HttpClient httpClient, AzureADConfiguration azureADConfiguration, IConfidentialClientApplication confidentialClientApplication)
         {
             HttpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
             AzureADConfiguration = azureADConfiguration ?? throw new ArgumentNullException(nameof(azureADConfiguration));
-
-            var certificate = CertificateFinder.FindBySubjectName(azureADConfiguration.CertificateSubjectName, DateTime.UtcNow);
-
-            if (certificate == null)
-            {
-                throw new Exception($"Couldn't find certificate with subject name '{azureADConfiguration.CertificateSubjectName}' in the CurrentUser or LocalMachine store locations. The certificate must be installed on the target machine before using it.");
-            }
-
-            ConfidentialClientApplication = ConfidentialClientApplicationBuilder
-                .Create(AzureADConfiguration.ClientId)
-                .WithCertificate(certificate)
-                .WithAuthority(AzureCloudInstance.AzurePublic, AzureADConfiguration.TenantId)
-                .Build();
+            ConfidentialClientApplication = confidentialClientApplication ?? throw new ArgumentNullException(nameof(confidentialClientApplication));
 
             Scopes = new string[] { azureADConfiguration.AADAppIdentifiers[GetType()] + DefaultScope };
         }
