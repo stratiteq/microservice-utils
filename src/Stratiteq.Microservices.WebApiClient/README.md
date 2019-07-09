@@ -18,8 +18,8 @@ namespace ServiceA
 {
     public class ServiceBClient : WebApiClientBase
     {
-        public ServiceBClient(HttpClient httpClient, AzureADConfiguration azureADConfiguration)
-            : base(httpClient, azureADConfiguration)
+        public ServiceBClient(HttpClient httpClient, AzureADConfiguration azureADConfiguration, IConfidentialClientApplication confidentialClientApplication)
+            : base(httpClient, azureADConfiguration, confidentialClientApplication)
         {
         }
 
@@ -36,9 +36,9 @@ namespace ServiceA
 ```
 The base class `WebApiClientBase` will help you get the token you need with `GetAuthHeaderValueAsync()` in order to successfully authenticate with ServiceB.
 
-3. In order to hook up your clients, first create a singleton instance of the `AzureADConfiguration` class during startup (typically in Startup.cs where you configure your services), e.g:
+3. In order to hook up your clients, first create a singleton instance of the `AzureADConfiguration` class and an instance of a IConfidentialClientApplication during startup (typically in Startup.cs where you configure your services), e.g:
 ```
-Services.AddSingleton<AzureADConfiguration>(new AzureADConfiguration
+var azureADConfiguration = new AzureADConfiguration
 {
     TenantId = config["Security:AzureAD:TenantId"],
     ClientId = config["Security:AzureAD:ClientId"],
@@ -47,7 +47,10 @@ Services.AddSingleton<AzureADConfiguration>(new AzureADConfiguration
     {
         { typeof(ServiceBClient), config["ServiceBClient:AADAppIdentifier"] }
     }
-});
+}
+
+Services.AddSingleton<AzureADConfiguration>(azureADConfiguration);
+Services.AddSingleton<IConfidentialClientApplication>(azureADConfiguration.CreateConfidentialClientApplication(config["Security:AzureAD:CertificateSubjectName"]));
 ```
 (The configuration naming is an example only)
 Note that AADAppIdentifiers is a list, this is because a given service might need to call several different Web Apis. The `WebApiClientBase` base class knows how to pick the correct identifier based on your typed client class.
